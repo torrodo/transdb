@@ -1,0 +1,12 @@
+services:
+    translation.loader.db:
+        class: AppBundle\Model\Translation\TransDbLoader
+        arguments: [@doctrine.orm.entity_manager]
+        tags:
+            - { name: translation.loader, alias: db }
+
+    translation.dumper.db:
+        class:  AppBundle\Model\Translation\TransDbDumper
+        arguments: [@doctrine.orm.entity_manager]
+        tags:
+            - { name: translation.dumper, alias: db }
